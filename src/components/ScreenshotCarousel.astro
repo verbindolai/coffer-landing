@@ -1,0 +1,35 @@
+---
+// ScreenshotCarousel — client-side script for carousel dot navigation + scroll tracking
+---
+
+<script>
+const track = document.getElementById('screenshot-track');
+const dots = document.querySelectorAll('#carousel-dots .carousel-dot');
+
+if (track && dots.length) {
+  dots.forEach((dot) => {
+    dot.addEventListener('click', () => {
+      const i = parseInt((dot as HTMLElement).dataset.index ?? '0');
+      track.children[i]?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'start',
+      });
+    });
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const i = [...track.children].indexOf(entry.target);
+          dots.forEach((d, j) => d.classList.toggle('active', j === i));
+        }
+      });
+    },
+    { root: track, threshold: 0.6 },
+  );
+
+  [...track.children].forEach((slide) => observer.observe(slide));
+}
+</script>

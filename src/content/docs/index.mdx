@@ -23,6 +23,7 @@ hero:
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 import CoinHero3D from '../../components/CoinHero3D.astro';
+import ScreenshotCarousel from '../../components/ScreenshotCarousel.astro';
 
 <CoinHero3D />
 
@@ -79,32 +80,7 @@ import CoinHero3D from '../../components/CoinHero3D.astro';
   </div>
 </div>
 
-<script>
-{(() => {
-  if (typeof document === 'undefined') return;
-  const track = document.getElementById('screenshot-track');
-  const dots = document.querySelectorAll('#carousel-dots .carousel-dot');
-  if (!track || !dots.length) return;
-
-  dots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      const i = parseInt(dot.dataset.index);
-      track.children[i]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-    });
-  });
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const i = [...track.children].indexOf(entry.target);
-        dots.forEach((d, j) => d.classList.toggle('active', j === i));
-      }
-    });
-  }, { root: track, threshold: 0.6 });
-
-  [...track.children].forEach(slide => observer.observe(slide));
-})()}
-</script>
+<ScreenshotCarousel />
 
 </div>
 
