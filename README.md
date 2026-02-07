@@ -1,6 +1,6 @@
 # Coffer Landing Page & Documentation
 
-Landing page and documentation site for [Coffer](https://github.com/nickvdw/coffer) — a self-hosted coin collection manager.
+Landing page and documentation site for [Coffer](https://github.com/verbindolai/coffer) — a self-hosted coin collection manager.
 
 Built with [Astro](https://astro.build) and [Starlight](https://starlight.astro.build). Deployed to GitHub Pages.
 

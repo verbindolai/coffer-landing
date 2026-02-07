@@ -19,9 +19,9 @@ You need all three repositories in the same parent directory:
 
 ```bash
 mkdir coffer && cd coffer
-git clone https://github.com/nickvdw/coffer2.git
-git clone https://github.com/nickvdw/coffer2-ui.git
-git clone https://github.com/nickvdw/coffer-deploy.git
+git clone https://github.com/verbindolai/coffer2.git
+git clone https://github.com/verbindolai/coffer2-ui.git
+git clone https://github.com/verbindolai/coffer-deploy.git
 ```
 
 ### 2. Configure environment

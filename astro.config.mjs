@@ -60,7 +60,7 @@ export default defineConfig({
 				{
 					icon: 'github',
 					label: 'GitHub',
-					href: 'https://github.com/nickvdw/coffer',
+					href: 'https://github.com/verbindolai/coffer',
 				},
 			],
 			components: {
