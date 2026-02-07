@@ -19,7 +19,7 @@ Coffer is configured through environment variables in the `.env` file within the
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `NUMISTA_API_KEY` | *(empty)* | Numista API key for catalog lookups. Optional but recommended. See [Numista integration](/coffer/docs/numista/). |
+| `NUMISTA_API_KEY` | *(empty)* | Numista API key for catalog lookups. Optional but recommended. See [Numista integration](/coffer-landing/docs/numista/). |
 
 ### Application
 
