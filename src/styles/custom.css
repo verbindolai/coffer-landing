@@ -54,17 +54,21 @@ header.header {
 	border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* Logo sizing in the nav */
-[data-has-logo] .site-title img {
-	max-height: 2rem;
+/* Header logo + title — white, closer together */
+.site-title {
+	color: rgba(255, 255, 255, 0.95) !important;
+	gap: 0.5rem !important;
 }
-
-/* Site title — spaced-out letter style matching the app's "C O F F E R" */
-[data-has-logo] .site-title span {
+.site-title img {
+	max-height: 2rem;
+	filter: brightness(0) invert(1);
+}
+.site-title span {
 	letter-spacing: 0.25em;
 	text-transform: uppercase;
 	font-weight: 600;
 	font-size: 0.9rem;
+	color: rgba(255, 255, 255, 0.95);
 }
 
 /* Hero section styling */
@@ -73,10 +77,20 @@ header.header {
 	padding-block: 4rem;
 }
 
-/* Hero image — allow larger logo */
+/* Hero image — 3D coin viewer */
 .hero .hero-html {
-	width: 280px;
-	height: 280px;
+	width: 500px;
+	height: 420px;
+	max-width: 100%;
+}
+
+#coin-3d-hero {
+	width: 100%;
+	height: 420px;
+}
+
+#coin-3d-hero canvas {
+	display: block;
 }
 
 /* Accent link color */
@@ -256,31 +270,35 @@ td {
 	color: rgba(255, 255, 255, 0.95);
 }
 
-/* Screenshot gallery */
-.sl-markdown-content .screenshot-gallery {
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 2rem;
+/* Screenshot carousel */
+.sl-markdown-content .screenshot-carousel {
+	position: relative;
+	overflow: hidden;
 	margin-block: 2rem;
 }
 
-@media (min-width: 768px) {
-	.sl-markdown-content .screenshot-gallery {
-		grid-template-columns: 1fr 1fr;
-	}
+.sl-markdown-content .screenshot-track {
+	display: flex;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	scrollbar-width: none;
+}
+.sl-markdown-content .screenshot-track::-webkit-scrollbar {
+	display: none;
 }
 
-.sl-markdown-content .screenshot-item {
+.sl-markdown-content .screenshot-slide {
+	flex: 0 0 100%;
+	min-width: 0;
+	scroll-snap-align: start;
 	display: flex;
 	flex-direction: column;
 	gap: 0.75rem;
+	padding-bottom: 0.5rem;
 }
 
-.sl-markdown-content .screenshot-item.wide {
-	grid-column: 1 / -1;
-}
-
-.sl-markdown-content .screenshot-item img {
+.sl-markdown-content .screenshot-slide img {
 	width: 100%;
 	border-radius: 12px;
 	border: 1px solid rgba(255, 255, 255, 0.08);
@@ -291,4 +309,27 @@ td {
 	font-size: 0.85rem;
 	color: rgba(255, 255, 255, 0.5);
 	text-align: center;
+}
+
+/* Carousel dots */
+.sl-markdown-content .carousel-dots {
+	display: flex;
+	justify-content: center;
+	gap: 0.5rem;
+	margin-top: 1rem;
+}
+
+.sl-markdown-content .carousel-dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	border: none;
+	background: rgba(255, 255, 255, 0.2);
+	cursor: pointer;
+	padding: 0;
+	transition: background 0.2s ease;
+}
+
+.sl-markdown-content .carousel-dot.active {
+	background: #00d4aa;
 }
