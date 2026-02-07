@@ -93,6 +93,27 @@ header.header {
 	display: block;
 }
 
+/* Responsive coin on mobile */
+@media (max-width: 480px) {
+	.hero .hero-html {
+		width: 280px;
+		height: 240px;
+	}
+	#coin-3d-hero {
+		height: 240px;
+	}
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+	.hero .hero-html {
+		width: 360px;
+		height: 320px;
+	}
+	#coin-3d-hero {
+		height: 320px;
+	}
+}
+
 /* Accent link color */
 a {
 	color: #00d4aa;
