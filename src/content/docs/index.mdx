@@ -1,0 +1,90 @@
+---
+title: Coffer
+description: Self-hosted coin collection manager with real-time precious metal valuations and Numista integration.
+template: splash
+hero:
+  title: |
+    Track your coins.
+    <br/>Know their worth.
+  tagline: Self-hosted coin collection manager with real-time precious metal valuations, portfolio analytics, and Numista catalog integration.
+  image:
+    html: |
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="white" width="280" height="280" style="filter: drop-shadow(0 0 32px rgba(0, 212, 170, 0.35));">
+        <rect x="10" y="10" width="80" height="22" rx="6" ry="6"/>
+        <rect x="10" y="39" width="65" height="22" rx="6" ry="6"/>
+        <rect x="10" y="68" width="80" height="22" rx="6" ry="6"/>
+      </svg>
+  actions:
+    - text: Get Started
+      link: /coffer/docs/installation/
+      icon: right-arrow
+      variant: primary
+    - text: View on GitHub
+      link: https://github.com/nickvdw/coffer
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<div class="feature-grid">
+  <div class="feature-card">
+    <h3>Real-Time Metal Valuations</h3>
+    <p>Automatic gold, silver, and platinum pricing updated every 5 minutes from live market data. See the exact melt value of every coin in your collection.</p>
+  </div>
+  <div class="feature-card">
+    <h3>Numista Catalog Integration</h3>
+    <p>Search the world's largest coin catalog directly from Coffer. Auto-fill coin details, fetch images, and track collector market values.</p>
+  </div>
+  <div class="feature-card">
+    <h3>Portfolio Analytics</h3>
+    <p>Aggregate portfolio value with historical charts, metal composition breakdowns, and multiple timeframes from 1 hour to full history.</p>
+  </div>
+  <div class="feature-card">
+    <h3>Self-Hosted &amp; Private</h3>
+    <p>Deploy with Docker in minutes. Your data stays on your hardware. No subscriptions, no tracking, no third-party dependencies.</p>
+  </div>
+  <div class="feature-card">
+    <h3>Collection Import</h3>
+    <p>Import your existing Numista collection with a single OAuth flow. Coins, images, and metadata are pulled automatically.</p>
+  </div>
+  <div class="feature-card">
+    <h3>Detailed Coin Records</h3>
+    <p>Store weight, purity, diameter, grade, mint mark, year, denomination, country, and more. Supports bullion, commemorative, and circulation coins.</p>
+  </div>
+</div>
+
+<div style="margin-top: 3rem;">
+
+### Screenshots
+
+<div class="screenshot-gallery">
+  <div class="screenshot-item">
+    <img src="/coffer/screenshots/collection.png" alt="Collection view showing coin cards with metal and collector values" />
+    <span class="screenshot-caption">Browse your collection with filters and real-time valuations</span>
+  </div>
+  <div class="screenshot-item">
+    <img src="/coffer/screenshots/portfolio.png" alt="Portfolio overview with value charts and metal breakdowns" />
+    <span class="screenshot-caption">Portfolio analytics with historical value tracking</span>
+  </div>
+  <div class="screenshot-item wide">
+    <img src="/coffer/screenshots/coin-detail.png" alt="Detailed coin view with specifications and valuation chart" />
+    <span class="screenshot-caption">Detailed coin view with specifications, images, and valuation history</span>
+  </div>
+</div>
+
+</div>
+
+<div style="margin-top: 2.5rem;">
+
+### Tech Stack
+
+<div class="tech-stack">
+  <span class="tech-badge">Spring Boot 4</span>
+  <span class="tech-badge">Kotlin</span>
+  <span class="tech-badge">Angular 18</span>
+  <span class="tech-badge">PostgreSQL</span>
+  <span class="tech-badge">Docker</span>
+  <span class="tech-badge">Tailwind CSS</span>
+</div>
+</div>
