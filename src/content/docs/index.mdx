@@ -73,11 +73,13 @@ import ScreenshotCarousel from '../../components/ScreenshotCarousel.astro';
       <span class="screenshot-caption">Detailed coin view with specifications, images, and valuation history</span>
     </div>
   </div>
-  <div class="carousel-dots" id="carousel-dots">
-    <button class="carousel-dot active" data-index="0" aria-label="Screenshot 1"></button>
-    <button class="carousel-dot" data-index="1" aria-label="Screenshot 2"></button>
-    <button class="carousel-dot" data-index="2" aria-label="Screenshot 3"></button>
-  </div>
+  <button class="carousel-arrow carousel-prev" id="carousel-prev" aria-label="Previous screenshot">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <button class="carousel-arrow carousel-next" id="carousel-next" aria-label="Next screenshot">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+  </button>
+  <div class="carousel-counter" id="carousel-counter">1 / 3</div>
 </div>
 
 <ScreenshotCarousel />

@@ -1,35 +1,51 @@
 ---
-// ScreenshotCarousel — client-side script for carousel dot navigation + scroll tracking
+// ScreenshotCarousel — left/right arrow navigation + counter
 ---
 
 <script>
 const track = document.getElementById('screenshot-track');
-const dots = document.querySelectorAll('#carousel-dots .carousel-dot');
+const prev = document.getElementById('carousel-prev');
+const next = document.getElementById('carousel-next');
+const counter = document.getElementById('carousel-counter');
 
-if (track && dots.length) {
-  dots.forEach((dot) => {
-    dot.addEventListener('click', () => {
-      const i = parseInt((dot as HTMLElement).dataset.index ?? '0');
-      track.children[i]?.scrollIntoView({
-        behavior: 'smooth',
-        block: 'nearest',
-        inline: 'start',
-      });
+if (track && prev && next) {
+  const slides = [...track.children] as HTMLElement[];
+  const total = slides.length;
+  let current = 0;
+
+  function update() {
+    prev.toggleAttribute('disabled', current === 0);
+    next.toggleAttribute('disabled', current === total - 1);
+    if (counter) counter.textContent = `${current + 1} / ${total}`;
+  }
+
+  function goTo(i: number) {
+    current = Math.max(0, Math.min(total - 1, i));
+    slides[current].scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'start',
     });
-  });
+    update();
+  }
 
+  prev.addEventListener('click', () => goTo(current - 1));
+  next.addEventListener('click', () => goTo(current + 1));
+
+  // sync current index when user scrolls manually
   const observer = new IntersectionObserver(
     (entries) => {
-      entries.forEach((entry) => {
+      for (const entry of entries) {
         if (entry.isIntersecting) {
-          const i = [...track.children].indexOf(entry.target);
-          dots.forEach((d, j) => d.classList.toggle('active', j === i));
+          current = slides.indexOf(entry.target as HTMLElement);
+          update();
         }
-      });
+      }
     },
     { root: track, threshold: 0.6 },
   );
+  slides.forEach((s) => observer.observe(s));
 
-  [...track.children].forEach((slide) => observer.observe(slide));
+  update();
 }
 </script>
