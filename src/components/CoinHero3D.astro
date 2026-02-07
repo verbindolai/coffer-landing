@@ -10,9 +10,19 @@ function init() {
   const container = document.getElementById('coin-3d-hero');
   if (!container) return;
 
+  // ── Coin pairs: add new {obverse, reverse, metal} entries here ──
+  const COIN_PAIRS = [
+    { obverse: 'obverse.jpg', reverse: 'reverse.jpg', metal: 'silver' },
+    { obverse: 'obverse-2.jpg', reverse: 'reverse-2.jpg', metal: 'gold' },
+  ];
+
+  // ── Pick a random pair on each page load ──
+  const coin = COIN_PAIRS[Math.floor(Math.random() * COIN_PAIRS.length)];
+
   // ── Configuration ──
-  const isGold = container.dataset.metal !== 'silver';
+  const isGold = coin.metal === 'gold';
   const METAL_COLOR = isGold ? 0xe8d8b0 : 0xffffff; // coffer2-ui: getMetalColor()
+  container.dataset.metal = coin.metal;
 
   // ── Scene (no background → transparent) ──
   const scene = new THREE.Scene();
@@ -95,8 +105,8 @@ function init() {
   const segments = 128;
 
   Promise.all([
-    loadTexture(`${basePath}/obverse.jpg`),
-    loadTexture(`${basePath}/reverse.jpg`),
+    loadTexture(`${basePath}/${coin.obverse}`),
+    loadTexture(`${basePath}/${coin.reverse}`),
   ]).then(([frontTex, backTex]) => {
     // edge (coffer2-ui: createEdgeMaterial — metalness 0.99, roughness 0.2)
     const edgeGeo = new THREE.CylinderGeometry(radius, radius, thickness, segments);
@@ -141,18 +151,28 @@ function init() {
     coinMesh.add(edge, front, back);
     coinGroup.add(coinMesh);
 
-    // ── Animation (coffer2-ui: targetRot.y += 0.004, easing 0.08) ──
+    // ── Animation (delta-time based, frame-rate independent) ──
+    // Original values tuned for 60 fps: targetRotY += 0.004/frame, easing 0.08/frame
+    const ROTATION_SPEED = 0.24; // rad/s (0.004 * 60)
+    const EASE_BASE = 0.08; // per-frame factor at 60 fps
     let targetRotY = 0;
     const baseY = coinGroup.position.y;
+    let lastTime = performance.now();
 
     function animate() {
       requestAnimationFrame(animate);
 
-      targetRotY += 0.004;
-      coinGroup.rotation.y += (targetRotY - coinGroup.rotation.y) * 0.08;
+      const now = performance.now();
+      const delta = Math.min((now - lastTime) / 1000, 0.1); // seconds, capped to avoid jumps
+      lastTime = now;
 
-      // gentle vertical hover
-      coinGroup.position.y = baseY + Math.sin(performance.now() * 0.001) * 0.03;
+      targetRotY += ROTATION_SPEED * delta;
+      // frame-rate-independent exponential easing: 1 - (1-base)^(delta*60)
+      const easeFactor = 1 - Math.pow(1 - EASE_BASE, delta * 60);
+      coinGroup.rotation.y += (targetRotY - coinGroup.rotation.y) * easeFactor;
+
+      // gentle vertical hover (already time-based via performance.now)
+      coinGroup.position.y = baseY + Math.sin(now * 0.001) * 0.03;
 
       renderer.render(scene, camera);
     }
