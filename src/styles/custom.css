@@ -398,3 +398,25 @@ td {
 	color: rgba(255, 255, 255, 0.4);
 	font-variant-numeric: tabular-nums;
 }
+
+/* Site footer / copyright */
+.sl-markdown-content .site-footer {
+	margin-top: 3rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid rgba(255, 255, 255, 0.06);
+	text-align: center;
+}
+
+.sl-markdown-content .site-footer p {
+	font-size: 0.78rem;
+	color: rgba(255, 255, 255, 0.35);
+	margin: 0.25rem 0;
+}
+
+.sl-markdown-content .site-footer a {
+	color: rgba(255, 255, 255, 0.45);
+}
+
+.sl-markdown-content .site-footer a:hover {
+	color: #00d4aa;
+}
