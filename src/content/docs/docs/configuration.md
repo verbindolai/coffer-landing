@@ -20,6 +20,7 @@ Coffer is configured through environment variables in the `.env` file within the
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `NUMISTA_API_KEY` | *(empty)* | Numista API key for catalog lookups. Optional but recommended. See [Numista integration](/docs/numista/). |
+| `NUMISTA_CLIENT_ID` | *(empty)* | Numista OAuth client ID. Required for the collection import flow. See [Numista integration](/docs/numista/). |
 
 ### Application
 
@@ -52,6 +53,9 @@ DB_PASSWORD=changeme_use_a_strong_password
 
 # Numista API key (optional, enables catalog features)
 NUMISTA_API_KEY=your_numista_api_key_here
+
+# Numista OAuth client ID (optional, enables collection import)
+NUMISTA_CLIENT_ID=your_numista_client_id_here
 
 # Frontend port
 FRONTEND_PORT=80

@@ -34,11 +34,13 @@ If you don't already have one, sign up at [numista.com](https://en.numista.com/)
 Once approved, you'll receive:
 
 - **API key** — Used for catalog lookups (coin types, search, images)
+- **Client ID** — Used for the OAuth collection import flow
 
-Add the API key to your `.env` file:
+Add both to your `.env` file:
 
 ```bash
 NUMISTA_API_KEY=your_api_key_here
+NUMISTA_CLIENT_ID=your_client_id_here
 ```
 
 ## How Coffer uses the API

@@ -3,31 +3,25 @@ title: Installation
 description: How to deploy Coffer with Docker.
 ---
 
-Coffer is deployed as three Docker containers: a PostgreSQL database, a Spring Boot backend, and an Nginx-served Angular frontend.
+Coffer is deployed as three Docker containers: a PostgreSQL database, a Spring Boot backend, and an Nginx-served Angular frontend. Pre-built images are pulled from GitHub Container Registry.
 
 ## Prerequisites
 
 - [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/) installed
-- Git
 - At least 1 GB of available RAM (512 MB allocated to the JVM by default)
 
 ## Quick start
 
-### 1. Clone the repositories
-
-You need all three repositories in the same parent directory:
+### 1. Clone the deployment repository
 
 ```bash
-mkdir coffer && cd coffer
-git clone https://github.com/verbindolai/coffer2.git
-git clone https://github.com/verbindolai/coffer2-ui.git
 git clone https://github.com/verbindolai/coffer-deploy.git
+cd coffer-deploy
 ```
 
 ### 2. Configure environment
 
 ```bash
-cd coffer-deploy
 cp .env.example .env
 ```
 
@@ -43,13 +37,13 @@ NUMISTA_API_KEY=your_numista_api_key
 
 See [Configuration](/docs/configuration/) for all available options.
 
-### 3. Build and start
+### 3. Start Coffer
 
 ```bash
-docker compose up -d --build
+docker compose up -d
 ```
 
-This builds both the backend and frontend from source, starts PostgreSQL, runs Liquibase migrations automatically, and starts the application.
+This pulls the pre-built backend and frontend images, starts PostgreSQL, runs Liquibase migrations automatically, and starts the application.
 
 ### 4. Access Coffer
 
@@ -59,13 +53,11 @@ The API documentation is available at [http://localhost:8080/swagger-ui.html](ht
 
 ## Updating
 
-Pull the latest changes and rebuild:
+Pull the latest images and restart:
 
 ```bash
-cd coffer-deploy
-git -C ../coffer2 pull
-git -C ../coffer2-ui pull
-docker compose up -d --build
+docker compose pull
+docker compose up -d
 ```
 
 Database migrations are applied automatically on startup via Liquibase.

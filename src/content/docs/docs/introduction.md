@@ -44,12 +44,4 @@ Both are tracked historically, so you can see how your collection's value has ch
 
 ## Project structure
 
-Coffer is split across three repositories:
-
-| Repository | Description |
-|-----------|-------------|
-| `coffer2` | Spring Boot backend (Kotlin) — REST API, database, integrations |
-| `coffer2-ui` | Angular frontend — collection UI, charts, portfolio dashboard |
-| `coffer-deploy` | Docker Compose deployment configuration |
-
-The deployment repo (`coffer-deploy`) ties everything together with a single `docker-compose.yml` that builds and runs the full stack.
+Coffer has a Kotlin/Spring Boot backend, an Angular frontend, and a Docker Compose deployment configuration. Pre-built container images are published to GitHub Container Registry — to self-host Coffer, see the [coffer-deploy](https://github.com/verbindolai/coffer-deploy) repository.

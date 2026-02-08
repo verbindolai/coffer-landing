@@ -83,8 +83,8 @@ The production deployment consists of three containers orchestrated by Docker Co
 | Container | Image | Port |
 |-----------|-------|------|
 | `coffer-db` | `postgres:16-alpine` | 5432 (internal) |
-| `coffer-backend` | Multi-stage build (Gradle + JDK 21 → JRE 21 Alpine) | 8080 (internal) |
-| `coffer-frontend` | Multi-stage build (Node 20 → Nginx Alpine) | 80 (exposed) |
+| `coffer-backend` | `ghcr.io/verbindolai/coffer2:latest` | 8080 (internal) |
+| `coffer-frontend` | `ghcr.io/verbindolai/coffer2-ui:latest` | 80 (exposed) |
 
 All containers communicate over an internal Docker bridge network. Only the frontend port is exposed to the host. Health checks ensure proper startup ordering:
 
