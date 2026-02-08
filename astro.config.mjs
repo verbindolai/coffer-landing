@@ -4,8 +4,7 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://verbindolai.github.io',
-	base: '/coffer-landing',
+	site: 'https://coffer.one',
 	integrations: [
 		starlight({
 			title: 'Coffer',
@@ -21,7 +20,7 @@ export default defineConfig({
 						rel: 'icon',
 						type: 'image/png',
 						sizes: '32x32',
-						href: '/coffer-landing/favicon-32x32.png',
+						href: '/favicon-32x32.png',
 					},
 				},
 				{
@@ -30,7 +29,7 @@ export default defineConfig({
 						rel: 'icon',
 						type: 'image/png',
 						sizes: '16x16',
-						href: '/coffer-landing/favicon-16x16.png',
+						href: '/favicon-16x16.png',
 					},
 				},
 				{

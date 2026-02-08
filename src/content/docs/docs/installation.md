@@ -41,7 +41,7 @@ DB_PASSWORD=your_secure_database_password
 NUMISTA_API_KEY=your_numista_api_key
 ```
 
-See [Configuration](/coffer-landing/docs/configuration/) for all available options.
+See [Configuration](/docs/configuration/) for all available options.
 
 ### 3. Build and start
 
