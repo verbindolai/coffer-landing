@@ -24,11 +24,11 @@ Coffer is configured through environment variables in the `.env` file within the
 
 ### Application
 
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `BASE_URL_FRONTEND` | `http://localhost:4200` | Public URL of the frontend. Used for OAuth redirect URIs. Set to your domain in production (e.g., `https://coffer.example.com`). |
-| `FRONTEND_PORT` | `80` | Port to expose the frontend on the host |
-| `JAVA_OPTS` | `-Xmx512m` | JVM options for the backend. Increase memory for larger collections. |
+| Variable | Default | Description                                                                                                                                                                                       |
+|----------|---------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `BASE_URL_FRONTEND` | `http://localhost:4200` | Public URL of the frontend. Used for OAuth redirect URIs. Set to your domain in use (e.g., `https://coffer.example.com` or `http://192.168.178:1234`). Make sure to match the frontend port used. |
+| `FRONTEND_PORT` | `80` | Port to expose the frontend on the host                                                                                                                                                           |
+| `JAVA_OPTS` | `-Xmx512m` | JVM options for the backend. Increase memory for larger collections.                                                                                                                              |
 
 ### Schedulers
 
