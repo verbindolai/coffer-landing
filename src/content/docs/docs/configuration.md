@@ -26,6 +26,7 @@ Coffer is configured through environment variables in the `.env` file within the
 
 | Variable | Default | Description |
 |----------|---------|-------------|
+| `BASE_URL_FRONTEND` | `http://localhost:4200` | Public URL of the frontend. Used for OAuth redirect URIs. Set to your domain in production (e.g., `https://coffer.example.com`). |
 | `FRONTEND_PORT` | `80` | Port to expose the frontend on the host |
 | `JAVA_OPTS` | `-Xmx512m` | JVM options for the backend. Increase memory for larger collections. |
 
@@ -56,6 +57,9 @@ NUMISTA_API_KEY=your_numista_api_key_here
 
 # Numista OAuth client ID (optional, enables collection import)
 NUMISTA_CLIENT_ID=your_numista_client_id_here
+
+# Public URL of the frontend (required for Numista OAuth redirect)
+BASE_URL_FRONTEND=https://coffer.example.com
 
 # Frontend port
 FRONTEND_PORT=80

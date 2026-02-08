@@ -43,6 +43,12 @@ NUMISTA_API_KEY=your_api_key_here
 NUMISTA_CLIENT_ID=your_client_id_here
 ```
 
+If you're deploying to a server, also set `BASE_URL_FRONTEND` to your public URL so the OAuth redirect works correctly:
+
+```bash
+BASE_URL_FRONTEND=https://coffer.example.com
+```
+
 ## How Coffer uses the API
 
 ### Coin type lookups
