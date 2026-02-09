@@ -18,7 +18,7 @@ export default defineConfig({
 					tag: 'meta',
 					attrs: {
 						property: 'og:image',
-						content: 'https://coffer.one/screenshots/landing-page.png',
+						content: 'https://coffer.one/og-image.jpg',
 					},
 				},
 				{
@@ -39,7 +39,7 @@ export default defineConfig({
 					tag: 'meta',
 					attrs: {
 						name: 'twitter:image',
-						content: 'https://coffer.one/screenshots/landing-page.png',
+						content: 'https://coffer.one/og-image.jpg',
 					},
 				},
 				{
