@@ -15,6 +15,34 @@ export default defineConfig({
 			favicon: '/favicon.svg',
 			head: [
 				{
+					tag: 'meta',
+					attrs: {
+						property: 'og:image',
+						content: 'https://coffer.one/screenshots/landing-page.png',
+					},
+				},
+				{
+					tag: 'meta',
+					attrs: {
+						property: 'og:type',
+						content: 'website',
+					},
+				},
+				{
+					tag: 'meta',
+					attrs: {
+						name: 'twitter:card',
+						content: 'summary_large_image',
+					},
+				},
+				{
+					tag: 'meta',
+					attrs: {
+						name: 'twitter:image',
+						content: 'https://coffer.one/screenshots/landing-page.png',
+					},
+				},
+				{
 					tag: 'link',
 					attrs: {
 						rel: 'icon',
