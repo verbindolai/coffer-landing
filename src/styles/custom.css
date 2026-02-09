@@ -313,21 +313,6 @@ td {
 	color: rgba(255, 255, 255, 0.95);
 }
 
-/* Demo video */
-.sl-markdown-content .demo-video-container {
-	margin-block: 1.5rem;
-	border-radius: 12px;
-	overflow: hidden;
-	border: 1px solid rgba(255, 255, 255, 0.08);
-	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
-}
-
-.sl-markdown-content .demo-video {
-	display: block;
-	width: 100%;
-	border-radius: 12px;
-}
-
 /* Screenshot carousel */
 .sl-markdown-content .screenshot-carousel {
 	position: relative;
@@ -356,7 +341,8 @@ td {
 	padding-bottom: 0.5rem;
 }
 
-.sl-markdown-content .screenshot-slide img {
+.sl-markdown-content .screenshot-slide img,
+.sl-markdown-content .screenshot-slide video {
 	width: 100%;
 	border-radius: 12px;
 	border: 1px solid rgba(255, 255, 255, 0.08);
