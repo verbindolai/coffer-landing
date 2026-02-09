@@ -46,7 +46,7 @@ import ScreenshotCarousel from '../../components/ScreenshotCarousel.astro';
   </div>
   <div class="feature-card">
     <h3>Collection Import</h3>
-    <p>Import your existing Numista collection with a single OAuth flow. Coins, images, and metadata are pulled automatically.</p>
+    <p>Import your existing Numista collection with a single OAuth flow. Coins, images, and metadata are pulled automatically. Note: large collections may generate a significant number of API calls.</p>
   </div>
   <div class="feature-card">
     <h3>Detailed Coin Records</h3>
@@ -64,7 +64,7 @@ import ScreenshotCarousel from '../../components/ScreenshotCarousel.astro';
       <video class="demo-video" autoplay muted loop playsinline>
         <source src="/videos/demo.mp4" type="video/mp4" />
       </video>
-      <span class="screenshot-caption">Full walkthrough of Coffer's features</span>
+      <span class="screenshot-caption">Quick walkthrough of Coffer</span>
     </div>
     <div class="screenshot-slide">
       <img src="/screenshots/collection.png" alt="Collection view showing coin cards with metal and collector values" />
@@ -75,20 +75,24 @@ import ScreenshotCarousel from '../../components/ScreenshotCarousel.astro';
       <span class="screenshot-caption">Detailed coin view with specifications, images, and pricing</span>
     </div>
     <div class="screenshot-slide">
-      <img src="/screenshots/3d-viewer.png" alt="Interactive 3D coin viewer showing reverse side" />
-      <span class="screenshot-caption">Interactive 3D coin viewer with rotate, zoom, and auto-spin</span>
+      <img src="/screenshots/type-variants.png" alt="Coin type detail page showing variants by mint mark" />
+      <span class="screenshot-caption">Coin type overview with variants and aggregate valuations</span>
     </div>
     <div class="screenshot-slide">
       <img src="/screenshots/portfolio.png" alt="Portfolio overview with value charts and metal breakdowns" />
       <span class="screenshot-caption">Portfolio analytics with historical value tracking</span>
     </div>
     <div class="screenshot-slide">
-      <img src="/screenshots/valuation-chart.png" alt="Coin valuation chart with metal and collector value history" />
-      <span class="screenshot-caption">Per-coin valuation chart with metal and collector values</span>
+      <img src="/screenshots/catalog-search.png" alt="Numista catalog search modal with results for Silver Krugerrand" />
+      <span class="screenshot-caption">Search the Numista catalog directly from the add coin form</span>
     </div>
     <div class="screenshot-slide">
-      <img src="/screenshots/catalog-search.png" alt="Numista catalog search modal with results" />
-      <span class="screenshot-caption">Search the Numista catalog directly from the add coin form</span>
+      <img src="/screenshots/form-auto-filled.png" alt="Add coin form auto-filled from Numista catalog search" />
+      <span class="screenshot-caption">Form fields auto-filled from catalog search results</span>
+    </div>
+    <div class="screenshot-slide">
+      <img src="/screenshots/form-specs.png" alt="Coin form showing physical specifications fetched by Numista ID" />
+      <span class="screenshot-caption">Physical specs and metadata fetched automatically by Numista ID</span>
     </div>
     <div class="screenshot-slide">
       <img src="/screenshots/import-result.png" alt="Collection import complete with summary statistics" />
@@ -101,7 +105,7 @@ import ScreenshotCarousel from '../../components/ScreenshotCarousel.astro';
   <button class="carousel-arrow carousel-next" id="carousel-next" aria-label="Next screenshot">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
   </button>
-  <div class="carousel-counter" id="carousel-counter">1 / 8</div>
+  <div class="carousel-counter" id="carousel-counter">1 / 9</div>
 </div>
 
 <ScreenshotCarousel />

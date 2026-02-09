@@ -82,6 +82,10 @@ The import feature uses OAuth to access your Numista collection:
 The import deduplicates using the `(numistaId, year, mintMark)` tuple — not just the Numista type ID. This means you can safely re-import without creating duplicates, even if you have multiple coins of the same type with different issues.
 :::
 
+:::caution
+The import process makes multiple API calls per coin (fetching type details, images, and collector prices). If your Numista collection contains a large number of coins, this can result in a significant number of API requests and may take several minutes to complete. Keep the Numista API rate limits in mind.
+:::
+
 ## Rate limits
 
 The Numista API has rate limits. Coffer handles this by:
