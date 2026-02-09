@@ -56,6 +56,18 @@ import ScreenshotCarousel from '../../components/ScreenshotCarousel.astro';
 
 <div style="margin-top: 3rem;">
 
+### See it in Action
+
+<div class="demo-video-container">
+  <video class="demo-video" autoplay muted loop playsinline>
+    <source src="/videos/demo.mp4" type="video/mp4" />
+  </video>
+</div>
+
+</div>
+
+<div style="margin-top: 3rem;">
+
 ### Screenshots
 
 <div class="screenshot-carousel">
@@ -65,12 +77,28 @@ import ScreenshotCarousel from '../../components/ScreenshotCarousel.astro';
       <span class="screenshot-caption">Browse your collection with filters and real-time valuations</span>
     </div>
     <div class="screenshot-slide">
+      <img src="/screenshots/coin-detail.png" alt="Detailed coin view with specifications and pricing" />
+      <span class="screenshot-caption">Detailed coin view with specifications, images, and pricing</span>
+    </div>
+    <div class="screenshot-slide">
+      <img src="/screenshots/3d-viewer.png" alt="Interactive 3D coin viewer showing reverse side" />
+      <span class="screenshot-caption">Interactive 3D coin viewer with rotate, zoom, and auto-spin</span>
+    </div>
+    <div class="screenshot-slide">
       <img src="/screenshots/portfolio.png" alt="Portfolio overview with value charts and metal breakdowns" />
       <span class="screenshot-caption">Portfolio analytics with historical value tracking</span>
     </div>
     <div class="screenshot-slide">
-      <img src="/screenshots/coin-detail.png" alt="Detailed coin view with specifications and valuation chart" />
-      <span class="screenshot-caption">Detailed coin view with specifications, images, and valuation history</span>
+      <img src="/screenshots/valuation-chart.png" alt="Coin valuation chart with metal and collector value history" />
+      <span class="screenshot-caption">Per-coin valuation chart with metal and collector values</span>
+    </div>
+    <div class="screenshot-slide">
+      <img src="/screenshots/catalog-search.png" alt="Numista catalog search modal with results" />
+      <span class="screenshot-caption">Search the Numista catalog directly from the add coin form</span>
+    </div>
+    <div class="screenshot-slide">
+      <img src="/screenshots/import-result.png" alt="Collection import complete with summary statistics" />
+      <span class="screenshot-caption">One-click Numista collection import via OAuth</span>
     </div>
   </div>
   <button class="carousel-arrow carousel-prev" id="carousel-prev" aria-label="Previous screenshot">
@@ -79,7 +107,7 @@ import ScreenshotCarousel from '../../components/ScreenshotCarousel.astro';
   <button class="carousel-arrow carousel-next" id="carousel-next" aria-label="Next screenshot">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
   </button>
-  <div class="carousel-counter" id="carousel-counter">1 / 3</div>
+  <div class="carousel-counter" id="carousel-counter">1 / 7</div>
 </div>
 
 <ScreenshotCarousel />
